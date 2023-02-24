@@ -37,7 +37,7 @@ wg:
 
 envFrom:
   - configMapRef:
-      name: '{{ include "noc.common.names.fullname" . }}-wg-env-config'
+      name: '{{ include "tc.common.names.fullname" . }}-wg-env-config'
 
 probes:
   liveness:
