@@ -1,0 +1,24 @@
+apiVersion: v2
+appVersion: "1.0.0"
+dependencies:
+  - name: common
+    repository: tbd
+    version: 1.0.0
+description: WireGuard® is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.
+home: https://github.com/nulledout/wireguard-multi
+icon: https://raw.githubusercontent.com/WeeJeWel/wg-easy/master/src/www/img/logo.png
+keywords:
+  - wireguard
+  - vpn
+kubeVersion: ">=1.16.0-0"
+maintainers:
+  - email: zach.snell@bivalogic.com
+    name: Bivalogic
+    url: https://bivalogic.com
+name: wireguard
+sources:
+  - https://github.com/nulledout/charts/tree/main/charts/wireguard-multi
+version: 1.0.0
+annotations:
+  nulledout/catagories: |
+    - network

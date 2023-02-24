@@ -1,0 +1,59 @@
+image:
+  repository: ghcr.io/nulledout/wireguard-multi
+  tag: latest
+  pullPolicy: IfNotPresent
+
+podSecurityContext:
+  runAsUser: 0
+  runAsGroup: 0
+
+securityContext:
+  runAsNonRoot: false
+  readOnlyRootFilesystem: false
+  capabilities:
+    add:
+      - NET_ADMIN
+      - SYS_MODULE
+
+wg:
+  killswitch: false
+  excludedIP4networks: []
+  excludedIP6networks: []
+  # Leave empty if you going to use the paste your config bellow
+  configFileHostPath: ""
+  config:
+    enabled: false
+    # Your wg config here eg:
+    data: |
+      [Interface]
+      Address = 10.0.0.1/24
+      ListenPort = 51820
+      PrivateKey = PRIVATE_KEY
+
+      [Peer]
+      PublicKey = PUBLIC_KEY
+      AllowedIPs = 0.0.0.0/0
+      Endpoint = wg.example:51820
+
+envFrom:
+  - configMapRef:
+      name: '{{ include "noc.common.names.fullname" . }}-wg-env-config'
+
+probes:
+  liveness:
+    enabled: false
+  readiness:
+    enabled: false
+  startup:
+    enabled: false
+
+service:
+  main:
+    ports:
+      main:
+        port: 51821
+        targetPort: 51820
+        protocol: UDP
+
+portal:
+  enabled: false
