@@ -1,0 +1,18 @@
+{
+    "charts": {
+        "wireguard-multi": {
+            "name": "wireguard-multi",
+            "categories": [
+                "network"
+            ],
+            "app_readme": "<p>WireGuard\u00ae is an extremely simple yet fast and modern VPN that utilizes state-of-the-art cryptography.</p>",
+            "location": "/home/runner/work/catalog/charts/charts/wireguard-multi",
+            "healthy": true,
+            "healthy_error": null,
+            "latest_version": "1.0.0",
+            "latest_app_version": "1.0.0",
+            "latest_human_version": "1.0.0",
+            "icon_url": "https://raw.githubusercontent.com/WeeJeWel/wg-easy/master/src/www/img/logo.png"
+        }
+    }
+}
