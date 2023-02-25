@@ -35,9 +35,9 @@ wg:
       AllowedIPs = 0.0.0.0/0
       Endpoint = wg.example:51820
 
-envFrom:
-  - configMapRef:
-      name: '{{ include "noc.common.names.fullname" . }}-wg-env-config'
+# envFrom:
+#   - configMapRef:
+#       name: '{{ /* include "noc.common.names.fullname" . */ }}-wg-env-config'
 
 probes:
   liveness:

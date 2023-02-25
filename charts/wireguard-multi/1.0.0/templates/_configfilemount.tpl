@@ -5,6 +5,6 @@ type: hostPath
 readOnly: false
 hostPathType: ""
 hostPath: {{ .Values.wg.configFileHostPath }}
-mountPath: /etc/wireguard/
+mountPath: /etc/wireguard
 {{- end }}
 {{- end -}}
